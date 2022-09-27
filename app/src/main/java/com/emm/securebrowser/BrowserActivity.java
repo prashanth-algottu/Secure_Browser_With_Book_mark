@@ -59,7 +59,7 @@ public class BrowserActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar);
         webView = findViewById(R.id.web_view);
         webHome = findViewById(R.id.web_home);
-//        web_fav_button = findViewById(R.id.web_fav_button);
+        web_fav_button = findViewById(R.id.web_fav_bu);
 
         webBack = findViewById(R.id.web_back);
         webForward = findViewById(R.id.web_forward);
@@ -92,18 +92,18 @@ public class BrowserActivity extends AppCompatActivity {
                     whiteList.add("twitter.com");
                     whiteList.add("myntra.com");
                     whiteList.add("flipkart.com");
-//                        web_fav_button.setBackground(getDrawable(R.drawable.book));
-//                        Toast.makeText(BrowserActivity.this,"white color",Toast.LENGTH_SHORT).show();
-//
-//                        ArrayList<String> datab = DB.getdata();
-//
-//                        for (String dat:datab) {
-//                            if(dat.equalsIgnoreCase(urlInput.getText().toString())){
-//                                web_fav_button.setBackground(getDrawable(R.drawable.bookmarks_svg));
-//                            }else{
-//                                web_fav_button.setBackground(getDrawable(R.drawable.book));
-//                            }
-//                        }
+                        web_fav_button.setBackground(getDrawable(R.drawable.book));
+                        Toast.makeText(BrowserActivity.this,"white color",Toast.LENGTH_SHORT).show();
+
+                        ArrayList<String> datab = DB.getdata();
+
+                        for (String dat:datab) {
+                            if(dat.equalsIgnoreCase(urlInput.getText().toString())){
+                                web_fav_button.setBackground(getDrawable(R.drawable.bookmarks_svg));
+                            }else{
+                                web_fav_button.setBackground(getDrawable(R.drawable.book));
+                            }
+                        }
                     loadMyUrl(urlInput.getText().toString());
                     return true;
                 }
@@ -173,79 +173,79 @@ public class BrowserActivity extends AppCompatActivity {
         });
 
 
-//        web_fav_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ArrayList<String> dataBaseList= DB.getdata();
-//                String url = urlInput.getText().toString();
-//
-//
-//            }
-//        });
+        web_fav_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArrayList<String> dataBaseList= DB.getdata();
+                String url = urlInput.getText().toString();
 
 
-//        web_fav_button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//
-//               ArrayList<String> dataBaseList= DB.getdata();
-//                String url = urlInput.getText().toString();
-//
-//
-//
-//
-//                if(b){
-//                    if(dataBaseList.size()>0){
-//                        System.out.println("Count-- "+dataBaseList.size());
-//
-//                        for(String data : dataBaseList){
-//                            if(data.equalsIgnoreCase(url)){
-//                                Boolean checkudeletedata = DB.deletedata(url);
-//                                Toast.makeText(BrowserActivity.this,"Deleted"+url,Toast.LENGTH_SHORT).show();
-//                                dataBaseList.remove(url);
-//                                if (checkudeletedata){
-//                                    Toast.makeText(BrowserActivity.this,"Deleted",Toast.LENGTH_SHORT).show();
-//                                    web_fav_button.setBackground(getDrawable(R.drawable.book));
-//                                }
-//                            }
-//                            else{
-//                                // 2nd time insert operation
-//                                Boolean checkinsertdata = DB.insertuserdata(url);
-//                                if(checkinsertdata){
-//                                    Toast.makeText(BrowserActivity.this,"2nd time inserted"+url,Toast.LENGTH_SHORT).show();
-//                                    web_fav_button.setBackground(getDrawable(R.drawable.bookmarks_svg));
-//
-//                                }
-//                            }
-//                        }
-//
-//                    }else if(dataBaseList.size()<=0){
-//                        // if data base has not having data at first this block will call
-//                        Boolean checkinsertdata = DB.insertuserdata(url);
-//                        if(checkinsertdata) {
-//                            Toast.makeText(BrowserActivity.this, "1st Entry Inserted-else-if "+url, Toast.LENGTH_SHORT).show();
-//                            web_fav_button.setBackground(getDrawable(R.drawable.bookmarks_svg));
-//                        }
-//                    }
-//
-//
-//
-//                    // Alternatively hits
-//                }else{
-//                    Boolean checkudeletedata = DB.deletedata(url);
-//                    dataBaseList.remove(url);
-//                    if(checkudeletedata){
-//                        Toast.makeText(BrowserActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
-//                        web_fav_button.setBackground(getDrawable(R.drawable.book));
-//                    }
-//                }
-//                dataBaseList = DB.getdata();
-//                for (String ar:dataBaseList) {
-//                    System.out.println("Final List --> "+ar);
-//
-//                }
-//            }
-//        });
+            }
+        });
+
+
+        web_fav_button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+               ArrayList<String> dataBaseList= DB.getdata();
+                String url = urlInput.getText().toString();
+
+
+
+
+                if(b){
+                    if(dataBaseList.size()>0){
+                        System.out.println("Count-- "+dataBaseList.size());
+
+                        for(String data : dataBaseList){
+                            if(data.equalsIgnoreCase(url)){
+                                Boolean checkudeletedata = DB.deletedata(url);
+                                Toast.makeText(BrowserActivity.this,"Deleted"+url,Toast.LENGTH_SHORT).show();
+                                dataBaseList.remove(url);
+                                if (checkudeletedata){
+                                    Toast.makeText(BrowserActivity.this,"Deleted",Toast.LENGTH_SHORT).show();
+                                    web_fav_button.setBackground(getDrawable(R.drawable.book));
+                                }
+                            }
+                            else{
+                                // 2nd time insert operation
+                                Boolean checkinsertdata = DB.insertuserdata(url);
+                                if(checkinsertdata){
+                                    Toast.makeText(BrowserActivity.this,"2nd time inserted"+url,Toast.LENGTH_SHORT).show();
+                                    web_fav_button.setBackground(getDrawable(R.drawable.bookmarks_svg));
+
+                                }
+                            }
+                        }
+
+                    }else if(dataBaseList.size()<=0){
+                        // if data base has not having data at first this block will call
+                        Boolean checkinsertdata = DB.insertuserdata(url);
+                        if(checkinsertdata) {
+                            Toast.makeText(BrowserActivity.this, "1st Entry Inserted-else-if "+url, Toast.LENGTH_SHORT).show();
+                            web_fav_button.setBackground(getDrawable(R.drawable.bookmarks_svg));
+                        }
+                    }
+
+
+
+                    // Alternatively hits
+                }else{
+                    Boolean checkudeletedata = DB.deletedata(url);
+                    dataBaseList.remove(url);
+                    if(checkudeletedata){
+                        Toast.makeText(BrowserActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
+                        web_fav_button.setBackground(getDrawable(R.drawable.book));
+                    }
+                }
+                dataBaseList = DB.getdata();
+                for (String ar:dataBaseList) {
+                    System.out.println("Final List --> "+ar);
+
+                }
+            }
+        });
 
     }
 

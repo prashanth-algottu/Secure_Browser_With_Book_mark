@@ -108,12 +108,12 @@
             android:padding="10dp"
             android:id="@+id/web_home" />
 
-       <!-- <Switch
-            android:id="@+id/web_fav_button"
+        <Switch
+            android:id="@+id/web_fav_bu"
             android:layout_width="17dp"
             android:layout_height="30dp"
             android:background="@drawable/book"
-            android:padding="10dp" />-->
+            android:padding="10dp" />
 
         <ImageView
             android:layout_width="24dp"
