@@ -20,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+        Toast.makeText(getApplicationContext(),"Hi Prashanth",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Hi Prashanth",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Hi Prashanth",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Hi Prashanth",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Hi Prashanth",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Hi Prashanth",Toast.LENGTH_SHORT).show();
         View decorview = findViewById(R.id.ovrlay);
         decorview.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
